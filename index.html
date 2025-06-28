@@ -7,14 +7,15 @@
     <style>
         /* 设置全局字体和基本样式 */
         body {
-            font-family: Arial, sans-serif; /* 使用Arial字体，如果没有则使用无衬线字体 */
+            font-family: PingFang SC, -apple-system, SF UI Text, Lucida Grande, STheiti, Microsoft YaHei, sans-serif,
+            FangSong,STFangsong,'Times New Roman', Times, serif; /* 使用Arial字体，如果没有则使用无衬线字体 */
             margin: 0; /* 去除默认的body外边距 */
             padding: 0; /* 去除默认的body内边距 */
             display: flex; /* 使用flexbox布局 */
             flex-direction: column; /* 主轴方向为垂直 */
             min-height: 100vh; /* 最小高度为视口高度 */
         }
-
+ 
         /* 包裹主要内容的容器 */
         .wrapper {
             display: flex; /* 使用flexbox布局 */
@@ -27,6 +28,12 @@
             max-width: 3840px; /* 最大宽度为1200px */
             margin: 0 auto; /* 水平居中 */
             display: flex; /* 使用flexbox布局 */
+        }
+        .center {
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
         }
 
         /* 侧边栏样式 */
@@ -61,25 +68,35 @@
             margin: 0; /* 去除默认的外边距 */
         }
 
-        /* 导航链接样式 */
-        .sidebar nav ul li a {
-            text-decoration: none; /* 去除下划线 */
-            color: #333; /* 文字颜色为深灰色 */
-            display: block; /* 显示为块级元素 */
-            padding: 1rem 0; /* 上下内边距为1rem */
-            text-align: center; /* 文字居中 */
-        }
-
-        /* 当前激活导航链接的样式 */
-        .sidebar nav ul li a.active {
-            font-weight: bold; /* 加粗文字 */
-        }
+            /* 导航链接样式 */
+            .sidebar nav ul li a {
+                font-family: PingFang SC, -apple-system, SF UI Text, Lucida Grande, STheiti, Microsoft YaHei, sans-serif, FangSong,STFangsong,'Times New Roman', Times, serif;
+                font-size: 1.2em;
+                text-decoration: none; /* 去除下划线 */
+                color: #333; /* 文字颜色为深灰色 */
+                display: block; /* 显示为块级元素 */
+                padding: 1rem 0; /* 上下内边距为1rem */
+                text-align: center; /* 文字居中 */
+            }
+            /* 导航段落 */
+            .sidebar nav ul li p {
+                text-decoration: none; /* 去除下划线 */
+                color: #333; /* 文字颜色为深灰色 */
+                display: block; /* 显示为块级元素 */
+                padding: 1rem 0; /* 上下内边距为1rem */
+                text-align: center; /* 文字居中 */
+            }
+       
+                /* 当前激活导航链接的样式 */
+                .sidebar nav ul li a.active {
+                    font-weight: bold; /* 加粗文字 */
+                }
 
         /* 内容区域样式 */
         .content {
             flex-grow: 1; /* 占据剩余空间 */
-            padding: 2rem; /* 内边距为2rem */
-            box-sizing: border-box; /* 盒模型包括内边距和边框 */
+            padding:2rem; /* 内边距为2rem */
+            /*box-sizing: border-box;*/ /* 盒模型包括内边距和边框 */
         }
 
         /* 每个部分内容区域的初始状态为隐藏 */
@@ -89,26 +106,29 @@
 
         /* 页脚样式 */
         footer {
-            background-color: white; /* 白色背景 */
+            background-color: transparent; /* 白色背景 */
             color: black; /* 黑色文字 */
+            margin:auto;
+            width:100%;
             text-align: center; /* 文字居中 */
-            padding: 1rem 0; /* 上下内边距为1rem */
+            position: absolute;
+            bottom: 0px;
         }
 
         /* 移动设备样式 (最大宽度768px) */
         @media (max-width: 768px) {
-            /* 将主轴方向改为水平 */
+             /*将主轴方向改为水平 */
             .wrapper {
                 flex-direction: column;
             }
 
-            /* 侧边栏宽度变为100%，最小宽度为0 */
+      /*       侧边栏宽度变为100%，最小宽度为0*/ 
             .sidebar {
                 width: 100%;
                 min-width: 0;
             }
 
-            /* 内容区域宽度变为100%，最小宽度为0 */
+             /*内容区域宽度变为100%，最小宽度为0 */
             .content {
                 width: 100%;
                 min-width: 0;
@@ -116,29 +136,29 @@
         }
 
         /* 电脑端缩放适配 */
-        @media (min-width: 769px) {
+        /*@media (min-width: 0px) {*/
             /* 确保侧边栏和内容区域在电脑端有合理的间距 */
-            .container {
-                gap: 2rem; /* 侧边栏和内容区域之间有2rem的间距 */
-            }
+            /*.container {
+                gap: 2rem;*/ /* 侧边栏和内容区域之间有2rem的间距 */
+            /*}*/
 
             /* 调整侧边栏和内容区域的最小宽度 */
-            .sidebar {
-                min-width: 15vw; /* 最小宽度为视口宽度的15% */
-            }
+            /*.sidebar {
+                min-width: 15vw;*/ /* 最小宽度为视口宽度的15% */
+            /*}
 
             .content {
-                min-width: 65vw; /* 最小宽度为视口宽度的65% */
-            }
-        }
+                min-width: 65vw;*/ /* 最小宽度为视口宽度的65% */
+            /*}
+        }*/
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const sections = document.querySelectorAll('.section');
             const links = document.querySelectorAll('.sidebar nav a');
 
             links.forEach(link => {
-                link.addEventListener('click', function(event) {
+                link.addEventListener('click', function (event) {
                     event.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     sections.forEach(section => {
@@ -167,6 +187,7 @@
                 </div>
                 <nav>
                     <ul>
+                        <li><p>                    </p></li>
                         <li><a href="#about">关于我</a></li>
                         <li><a href="#projects">项目</a></li>
                         <li><a href="#contact">联系</a></li>
@@ -198,16 +219,16 @@
                         <li>抖音: <a href="https://www.douyin.com/user/MS4wLjABAAAA7Uy1uVL_z-2p5lKcsz6VZN-GGyY0kZ20IQu1-wkzV6x1juA0V6tPLPQNYFthX16U?from_tab_name=main">闪耀的元宝</a></li>
                     </ul>
                 </section>
+                <footer>
+                    <div a="center">
+                        <p>&copy; 2025 元宝. 版权所有.</p>
+                    </div>
+                </footer>
             </main>
+  
         </div>
+
     </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 元宝. 版权所有.</p>
-        </div>
-    </footer>
+  
 </body>
 </html>
-
-
-

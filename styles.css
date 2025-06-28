@@ -20,14 +20,13 @@ body {
     max-width: 1200px;
     margin: auto;
     overflow: hidden;
-    padding: 20px;
 }
 @media (max-width: 768px) {
     .sidebar {
         position: relative;
         width: 100%;
         height: auto;
-        padding-bottom: 20px;
+
     }
 
     .content {

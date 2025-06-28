@@ -12,6 +12,7 @@
         }
         .wrapper {
             display: flex;
+            min-height: 100vh;
         }
         .container {
             width: 100%;
@@ -23,6 +24,7 @@
             background-color: #f4f4f4;
             padding: 20px;
             min-width: 200px;
+            box-sizing: border-box;
         }
         .profile img {
             border-radius: 50%;
@@ -49,6 +51,7 @@
         .content {
             flex-grow: 1;
             padding: 20px;
+            box-sizing: border-box;
         }
         .section {
             display: none;
@@ -58,6 +61,27 @@
             color: white;
             text-align: center;
             padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                min-width: 0;
+            }
+            .content {
+                width: 100%;
+                min-width: 0;
+            }
+            footer {
+                position: relative;
+            }
         }
     </style>
     <script>

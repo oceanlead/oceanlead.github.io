@@ -31,14 +31,15 @@ body {
 
 .sidebar {
     width: 25%;
-    background: #333;
-    color: #fff;
+    background: #fff;
+    color: #333;
     padding: 20px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     overflow-y: auto;
+    border-right: 1px solid #ddd;
 }
 
 .profile img.avatar {
@@ -73,7 +74,7 @@ body {
 }
 
 .sidebar nav a {
-    color: #fff;
+    color: #333;
     text-decoration: none;
     font-size: 16px;
     display: block;
@@ -84,6 +85,7 @@ body {
 .sidebar nav a:hover,
 .sidebar nav a.active {
     background: #e8491d;
+    color: #fff;
 }
 
 .content {
@@ -111,12 +113,13 @@ body {
 }
 
 footer {
-    background: #333;
-    color: #fff;
+    background: #fff;
+    color: #333;
     text-align: center;
     padding: 10px 0;
     width: 100%;
     position: relative;
+    border-top: 1px solid #ddd;
 }
 
 

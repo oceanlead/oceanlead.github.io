@@ -42,8 +42,10 @@
             padding: 1rem; /* 内边距为1rem */
             box-sizing: border-box; /* 盒模型包括内边距和边框 */
             width: 250px; /* 固定宽度 */
+            justify-content: space-between;
+            height: 100%;
         }
-
+        
         /* 头像样式 */
         .profile img {
             border-radius: 50%; /* 圆形头像 */
@@ -116,41 +118,46 @@
         }
 
         /* 移动设备样式 (最大宽度768px) */
-        @media (max-width: 768px) {
+        @media (max-width: 9px) {
             /* 将主轴方向改为水平*/ 
-            .wrapper {
+          /*  .wrapper {
                 flex-direction: column;
-            }
+            }*/
 
              /*侧边栏宽度变为100%，最小宽度为0 */
             .sidebar {
-                width: 250px; /* 固定宽度 */
+                width: 100%; /* 固定宽度 */
                 /*min-width: 0;*/
             }
 
              /*内容区域宽度变为100%，最小宽度为0 */
             .content {
                 width: 100%;
-                min-width: 0;
+                /*min-width: 0;*/
+            }
+            /* 调整头像大小 */
+            .profile img {
+                width: 10rem; /* 宽度为6rem */
+                height: 10rem; /* 高度为6rem */
             }
         }
 
         /* 电脑端缩放适配 */
-        /*@media (min-width: 0px) {*/
+        @media (min-width: 200px) {
             /* 确保侧边栏和内容区域在电脑端有合理的间距 */
             /*.container {
-                gap: 2rem;*/ /* 侧边栏和内容区域之间有2rem的间距 */
+                gap: 2rem;*/  /*侧边栏和内容区域之间有2rem的间距 */
             /*}*/
 
-            /* 调整侧边栏和内容区域的最小宽度 */
-            /*.sidebar {
-                min-width: 15vw;*/ /* 最小宽度为视口宽度的15% */
-            /*}
+           /*  调整侧边栏和内容区域的最小宽度 */
+            .sidebar {
+                min-width: 15rem; /*最小宽度为视口宽度的15%*/
+            }
 
             .content {
-                min-width: 65vw;*/ /* 最小宽度为视口宽度的65% */
-            /*}
-        }*/
+                min-width: 15rem; /*最小宽度为视口宽度的65% */
+            }
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {

@@ -31,7 +31,7 @@ body {
 
 .sidebar {
     width: 25%;
-    background: #fff;
+    background: #f4f4f9; /* Same as body background */
     color: #333;
     padding: 20px;
     position: fixed;
@@ -112,7 +112,7 @@ body {
 }
 
 footer {
-    background: #fff;
+    background: #f4f4f9; /* Same as body background */
     color: #333;
     text-align: center;
     padding: 10px 0;

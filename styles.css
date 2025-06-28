@@ -26,6 +26,7 @@ body {
 .container {
     display: flex;
     width: 100%;
+    min-height: calc(100% - 60px); /* Adjusted to account for footer height */
 }
 
 .sidebar {
@@ -33,11 +34,11 @@ body {
     background: #333;
     color: #fff;
     padding: 20px;
-    min-height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
+    overflow-y: auto;
 }
 
 .profile img.avatar {
@@ -89,6 +90,7 @@ body {
     width: 75%;
     margin-left: 25%; /* Offset for sidebar */
     padding: 20px;
+    min-height: calc(100% - 60px); /* Ensure content doesn't overlap with footer */
 }
 
 .section {
@@ -114,6 +116,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     width: 100%;
+    position: relative;
 }
 
 
